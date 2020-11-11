@@ -1,0 +1,17 @@
+.entry {
+    background-color: rgba(230, 230, 230, 230);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 50px 50px;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    max-height: 150px;
+}
+
+.banner img {
+    display: flex;
+    max-width: 150px
+}

@@ -1,0 +1,48 @@
+header {
+    align-items: center;
+    background-color: darkgreen;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px !important;
+}
+
+header *{
+    margin: 0;
+}
+
+header a{
+    color: white;
+    border: solid transparent 2px;
+    padding: 5px;
+    text-decoration: none;
+    transition: .2s ease-in;
+    user-select: none;
+}
+
+header .active:hover{
+    background-color: white;
+    color: darkgreen;
+    transition: .2s ease-in;
+}
+
+header .active {
+    border: solid white 2px;
+    transition: .2s ease-in;
+}
+
+.content a:hover{
+    border-bottom: solid white 2px;
+    transition: .2s ease-in;
+}
+
+.content li{
+    margin-right: 5px;
+}
+
+header .content{
+    color: white;
+    display: flex;
+    flex-direction: row;
+}

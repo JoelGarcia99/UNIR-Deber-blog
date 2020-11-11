@@ -1,0 +1,53 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+ol, ul, li{
+    display: block;
+}
+
+blockquote{
+    display: flex;
+    flex-direction: column;
+}
+
+body {    
+    background-color: rgba(245, 245, 245, 1.0);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 50px;
+}
+
+button, .button {
+    background-color: darkgreen;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 10px;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+button:focus{
+    outline: none;
+}
+
+.hr {
+    border-bottom: solid lightgray 1px;
+}
+
+.row {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    text-decoration: none;
+}
