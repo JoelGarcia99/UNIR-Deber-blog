@@ -1,22 +1,35 @@
 // const gfm = require('remark-gfm');
 
 import ReactMarkdown from 'react-markdown';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { getParameterByName } from '../helpers/search_query';
 import Reply from '../components/Reply';
 import { Header } from '../components/Header';
 
-import "../css/blog.css";
 import { loadDataById } from '../helpers/load_data';
+import "../css/blog.css";
 
-const ItemScreen = ({entryID}) => {
+const ItemScreen = ({entryID, location}) => {
 
-    let entryData = entryID || getParameterByName("entryID");
-    entryData = loadDataById(entryData);
+    const [entryData, setEntryData] = useState(undefined);
 
-    console.log(entryData);
+    useEffect(() => {
+        setEntryData(
+            loadDataById(entryID || getParameterByName("entryID", location))
+        );
+    }, []);   
+
+
+    if(!entryData) {
+        return (
+            <>
+            <Header location={location}/>
+            <h2>Url rota {":("}</h2>
+            </>
+        );
+    }
 
     return (
         <>        

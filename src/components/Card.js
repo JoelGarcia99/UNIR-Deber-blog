@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/card.css';
-import { Link } from 'react-router-dom';
 
 export const Card = React.memo(({entry}) => {
 
@@ -16,12 +15,12 @@ export const Card = React.memo(({entry}) => {
                 </blockquote>
             </div>
             <br />
-            <Link 
+            <a 
                 className="button" 
-                to={`/entry?entryID=${entry._id}`}
+                href={`/entry?entryID=${entry._id}`}
             >
                 Leer publicación
-            </Link>
+            </a>
         </div>
     );
 });

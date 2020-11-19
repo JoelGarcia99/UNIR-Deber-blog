@@ -1,16 +1,19 @@
-import React, { useContext, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from '../components/Card';
 import { Header } from '../components/Header';
 import { loadData } from '../helpers/load_data';
 
-export const HomeScreen = () => {
+const HomeScreen = ({location}) => {
     
-    const [entries, setEntries] = useState(loadData());
+    const [entries, setEntries] = useState([]);
+
+    useEffect(() => {
+        setEntries(loadData());
+    }, []);
     
-    console.log(entries);
     return (
         <div>            
-            <Header />
+            <Header location={location}/>
             <div className="container hr">
                 <h3>Blogs creados</h3>
             </div>
@@ -20,7 +23,10 @@ export const HomeScreen = () => {
                 :entries.map(entry=>{
                     return (
                         <li key={entry._id}>
-                            <Card entry={entry} key={entry._id} />
+                            <Card 
+                                entry={entry} 
+                                key={entry._id} 
+                            />
                         </li>
                     );
                 })
@@ -29,3 +35,5 @@ export const HomeScreen = () => {
         </div>
     )
 }
+
+export default HomeScreen;

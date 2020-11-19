@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CommentBox from '../components/Comment';
-import "../css/reply.css";
 import { addComment } from '../helpers/load_data';
+
+import "../css/reply.css";
 
 const Reply = ({entry}) => {
     

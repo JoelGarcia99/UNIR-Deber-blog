@@ -1,23 +1,23 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
 import "../css/header.css";
 
-export const Header = () => {
+export const Header = ({location}) => {
+
+    const _location = location && location.pathname;
+
     return (
         <header>
             <div className="logo">
-                <Link to="/"><h2>JBlog</h2></Link>
+                <a href="/"><h2>JBlog</h2></a>
             </div>
             <nav className="content">
                 <li>
-                    <NavLink to="/create" activeClassName="active">
+                    <a
+                        href="/create" 
+                        className={ (_location === "/create")? "active": ""}
+                    >
                         Crear tema
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/developer" activeClassName="active">
-                        Desarrollador
-                    </NavLink>
+                    </a>
                 </li>
             </nav>
         </header>

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import React, { useState } from 'react';
 import { Header } from '../components/Header';
-import '../css/create.css';
 import { saveData } from '../helpers/load_data';
+import '../css/create.css';
 
 let placeholder;
 
@@ -11,7 +11,7 @@ placeholder += "en este campo, por ejemplo, si usas ";
 placeholder += "la siguiente estructura **negrita** ";
 placeholder += "se imprimirá un texto en negritas.";
 
-const CreateEntry = () => {
+const CreateEntry = ({location}) => {
 
     const [form, setForm] = useState({
         "title": "Título",
@@ -35,7 +35,7 @@ const CreateEntry = () => {
 
     return (
         <>
-        <Header />
+        <Header location={location}/>
         <div className="container">        
             <h1 className="hr">Crear un nuevo tema</h1>
             {
@@ -53,9 +53,8 @@ const CreateEntry = () => {
                             className="text-area"
                             name="content"
                             onChange={handleInputChange}
-                        >
-                            {form['content']}
-                        </textarea>
+                            defaultValue={form['content']}
+                        />
                     </form>
                     :<ReactMarkdown 
                         className="text-area" 
