@@ -4,6 +4,8 @@ import '../css/card.css';
 
 export const Card = React.memo(({entry}) => {
 
+    const url = "https://joelgarcia99.github.io/UNIR-Deber-blog";
+
     return (
         <div className="card">
             <div>
@@ -17,7 +19,7 @@ export const Card = React.memo(({entry}) => {
             <br />
             <a 
                 className="button" 
-                href={`/entry?entryID=${entry._id}`}
+                href={`${url}/entry?entryID=${entry._id}`}
             >
                 Leer publicación
             </a>

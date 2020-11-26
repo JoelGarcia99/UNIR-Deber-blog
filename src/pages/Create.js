@@ -13,6 +13,8 @@ placeholder += "se imprimirá un texto en negritas.";
 
 const CreateEntry = ({location}) => {
 
+    const url = "https://joelgarcia99.github.io/UNIR-Deber-blog/";
+
     const [form, setForm] = useState({
         "title": "Título",
         "content": placeholder
@@ -30,7 +32,7 @@ const CreateEntry = ({location}) => {
     const handleFormSubmit = (e)=>{
         e.preventDefault();
         saveData(form);
-        window.location = "/";
+        window.location = url;
     }
 
     return (
